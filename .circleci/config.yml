@@ -1,0 +1,37 @@
+version: 2.1
+jobs:
+  node:
+    working_directory: ~/Avoid-Kuvid/
+    docker:
+      - image: cimg/node:12.16
+
+    steps:
+      - checkout
+
+      - run: cd ~/Avoid-Kuvid/app/ && yarn install
+
+      - run:
+          name: jest tests
+          command: |
+            cd ~/Avoid-Kuvid/app/
+            mkdir -p test-results/jest
+            yarn run test
+          environment:
+            JEST_JUNIT_OUTPUT: test-results/jest/junit.xml
+            JEST_JUNIT_OUTPUT_NAME: test-results/jest/junit.xml
+
+      - persist_to_workspace:
+          root: ~/Avoid-Kuvid/app/
+          paths:
+            - node_modules
+
+      - store_test_results:
+          path: ~/Avoid-Kuvid/app/test-results
+
+      - store_artifacts:
+          path: ~/Avoid-Kuvid/app/test-results
+
+workflows:
+  avoid-kuvid:
+    jobs:
+      - node
