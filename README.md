@@ -4,7 +4,7 @@
 Mobile application permitting students to organize their school life more easily within the university by consulting the cafeteria attendance, or by booking a study room.
 
 ## Context
-This project has been made during our course "Software Engineering with Practise" at Korea University during the first semester (2020).
+This project has been made for Capstione Disegn II (2021).
 
 ## Architecture
 
