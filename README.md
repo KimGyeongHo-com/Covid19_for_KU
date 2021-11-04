@@ -27,13 +27,5 @@ Step 4: Launch the patch by executing `./bin/patch_node_modules.bat` on Windows 
 Step 5: You may have to change the API URL in the file: `app/src/Services/apiRoot.tsx`  
 Step 6: Launch the mobile application by executing `npm run start`  
 
-## Developers
-- Bae Jang Hoon
-- Kim Dong Hwan
-- Kim Gyeong Ho
-- Maue Victor
-- Rigal Dorian
-- Tauran Julien
-
 ## License
 MIT License
